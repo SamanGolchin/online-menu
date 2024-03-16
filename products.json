@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "لیموناد",
+    "price": 200,
+    "description": " شکر، عسل، لیمو، چند برگ نعنا و آب",
+    "image": "../images/drink3.png",
+    "target": "1"
+  },
+  {
+    "id": 2,
+    "name": "شربت آلبالو",
+    "price": 500,
+    "description": " شکر، عسل، لیمو، چند برگ نعنا و آب",
+    "image": "../images/drink2.png"
+  },
+  {
+    "id": 3,
+    "name": "نوشابه",
+    "price": 400,
+    "description": " شکر، عسل، لیمو، چند برگ نعنا و آب",
+    "image": "../images/drink1.png"
+  }
+]

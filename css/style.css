@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root {
+  --primery: #2a403e;
+  --secondery: #0d0d0d;
+  --tertiary: #3b593f;
+  --white: #ffffff;
+  --black: #06141b;
+  --heading: #4d734c;
+}
+
+header {
+  width: 100%;
+  position: relative;
+}
+header .name {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondery);
+  position: fixed;
+  z-index: 10;
+}
+.name .logo {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+  border-radius: 50%;
+  background-color: var(--primery);
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  position: absolute;
+  left: 10px;
+}
+svg {
+  width: 25px;
+}
+.icon-cart {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 60px;
+  background-color: var(--primery);
+}
+.icon-cart span {
+  position: absolute;
+  background-color: var(--white);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--primery);
+  top: 50%;
+  right: -17px;
+}
+.name .name-heading {
+  font-size: 25px;
+  font-weight: bolder;
+  color: var(--heading);
+}
+header .background {
+  width: 100%;
+  height: 40vh;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logo-part {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+header .logo-part .logo {
+  width: 100px;
+  height: 100px;
+  background-image: url(../images/logo.png);
+  background-position: center;
+  background-size: cover;
+  background-color: var(--primery);
+  border: 5px solid var(--secondery);
+  border-radius: 50%;
+}
+header .description {
+  width: 100%;
+  height: 50vh;
+  background-color: var(--secondery);
+}
+.description .text {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.text .paragraph {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: lighter;
+}
+.text .heading {
+  color: var(--heading);
+  font-size: 30px;
+}
+.description .category {
+  padding-top: 25px;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category .category-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category-container .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  margin: 5px;
+  background-color: var(--primery);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 5px 0px;
+  border-radius: 20%;
+}
+.item .image {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+}
+.item .sub-heading {
+  color: #ffffff;
+  font-size: 15px;
+}
+.item .kebab {
+  background-image: url(../images/svg/kebab.svg);
+}
+.item .salad {
+  background-image: url(../images/svg/salad.svg);
+}
+.item .drink {
+  background-image: url(../images/svg/drink.svg);
+}
+.item .special {
+  background-image: url(../images/svg/special.svg);
+}
+.item .seafood {
+  background-image: url(../images/svg/seafood.svg);
+}
+a {
+  cursor: pointer;
+}
+/* ------------------- product ------------------- */
+.listProduct {
+  width: 100%;
+  background-image: url(../images/background-food.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.listProduct .item {
+  width: 45%;
+  height: 25vh;
+  border-radius: 20px;
+  background-color: var(--primery);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+.listProduct .item img {
+  width: 30%;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  right: 0;
+}
+.listProduct .item h2 {
+  width: 68%;
+  color: var(--heading);
+  padding-top: 5%;
+  font-size: 25px;
+}
+.listProduct .item .description {
+  width: 68%;
+  font-size: 15px;
+  padding-top: 25px;
+}
+.listProduct .item .price {
+  height: 30px;
+  position: absolute;
+  bottom: 15%;
+  right: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listProduct .item button {
+  width: 70px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: var(--secondery);
+  color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: none;
+  border: none;
+  position: absolute;
+}
+.listProduct .item .addCart {
+  bottom: 15%;
+  left: 3%;
+}
+.listProduct .item .open-modal {
+  bottom: 15%;
+  left: 23%;
+}
+/* ---------------------  Modal  --------------------- */
+
+/* ---------------------  to up  --------------------- */
+.up {
+  width: 50px;
+  height: 50px;
+  background-color: var(--white);
+  border-radius: 50%;
+  color: var(--primery);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 15px;
+  right: 14px;
+  cursor: pointer;
+  transition: 1s;
+}
+/* ---------------------  footer --------------------- */
+footer {
+  padding-top: 20px;
+  background: var(--secondery);
+  color: var(--white);
+}
+
+footer p {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ---------------------  cart  --------------------- */
+.cartTab {
+  width: 400px;
+  background-color: var(--tertiary);
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  right: -400px;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: 0.5s;
+  z-index: 100;
+}
+body.showCart .cartTab {
+  right: 0;
+}
+body.showCart .container {
+  transform: translateX(-250px);
+}
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+.cartTab .checkOut {
+  background-color: var(--secondery);
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 5px 0px;
+  cursor: pointer;
+}
+.cartTab .close {
+  width: 70px;
+  height: 30px;
+  background-color: var(--secondery);
+  color: var(--white);
+  border: none;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 5px 0px;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+}
+.listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.listCart .item img {
+  width: 100%;
+}
+.listCart .quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listCart .quantity span {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.listCart .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: var(--white);
+  cursor: auto;
+}
+.listCart .item:nth-child(even) {
+  background-color: var(--primery);
+}
+.listCart {
+  overflow: auto;
+}
+.listCart .name {
+  color: var(--black);
+}
+
+/*  ___________responsive______________  */
+
+@media only screen and (max-width: 425px) {
+  body {
+    width: 100%;
+  }
+  .name .logo {
+    width: 40px;
+    height: 40px;
+    left: 20px;
+  }
+  svg {
+    width: 25px;
+  }
+
+  .icon-cart {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+  }
+  .icon-cart span {
+    width: 20px;
+    height: 20px;
+    right: -10px;
+  }
+  .listProduct .item {
+    width: 90%;
+  }
+  .food-category .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .category-container .item {
+    padding: 5px 5px;
+    margin: 5px;
+  }
+  .cartTab {
+    width: 300px;
+    right: -300px;
+  }
+  .listCart .item {
+    display: grid;
+    grid-template-columns: 50px 110px 30px 0.7fr;
+    gap: 5px;
+    text-align: center;
+    align-items: center;
+  }
+}
