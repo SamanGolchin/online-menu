@@ -1,4 +1,5 @@
 let listProductHTML = document.querySelector(".listProduct");
+let listModalHTML = document.querySelector(".listModal");
 let listCartHTML = document.querySelector(".listCart");
 let iconCart = document.querySelector(".icon-cart");
 let iconCartSpan = document.querySelector(".icon-cart span");
@@ -57,7 +58,7 @@ const modalAddDataToHTML = () => {
                 <p class="description">${product.description}</p>
                 <div class="price">قیمت:تومان${product.price}</div>
                 <button class="close-modal">بستن</button>`;
-      listProductHTML.appendChild(newModal);
+      listModalHTML.appendChild(newModal);
     });
   }
 };
@@ -214,32 +215,29 @@ const changeQuantityCart = (product_id, type) => {
 initApp();
 
 const category = document.querySelectorAll(".category-container a");
-const Item = document.querySelectorAll(".listProduct");
+const item = document.querySelectorAll(".listProduct ");
 
 function newFunction() {
   return "click";
 }
 category.forEach((a) => {
   a.onclick = function () {
-    //active
     category.forEach((a) => {
       a.className = "";
     });
     a.className = "active";
-    //Filter
-    // console.log("hello world");
 
     const value = a.id;
-    // console.log(value);
-    // console.log(Item);
+    console.log(item);
 
-    Item.forEach((div) => {
-      div.forEach((d) => {
-        d.style.display = "none";
-        if (d.getAttribute("data-filter") == value.toLowerCase()) {
-          d.style.display = "flex";
-        }
+    item.forEach((div) => {
+      const category = div.querySelectorAll(
+        `.item[data-filter = '${value.toLowerCase()}']`
+      );
+      console.log(category);
+      category.forEach((d) => {
         console.log(d);
+        d.style.display = "flex";
       });
     });
   };
