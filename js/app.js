@@ -39,6 +39,7 @@ const addDataToHTML = () => {
     });
   }
 };
+
 const modalAddDataToHTML = () => {
   // remove datas default from HTML
 
@@ -72,7 +73,22 @@ const displayModal = (product) => {
   `;
   modal.style.display = "flex";
 };
+const initApp = () => {
+  // get data product
+  fetch("products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      products = data;
+      addDataToHTML();
+      modalAddDataToHTML();
 
+      // get data cart from memory
+      if (localStorage.getItem("cart")) {
+        cart = JSON.parse(localStorage.getItem("cart"));
+        addCartToHTML();
+      }
+    });
+};
 document.body.addEventListener("click", (event) => {
   if (event.target.classList.contains("open-modal")) {
     let productId = event.target.parentElement.dataset.id;
@@ -195,9 +211,14 @@ const changeQuantityCart = (product_id, type) => {
   addCartToMemory();
 };
 
-const category = document.querySelectorAll(".category-container a");
-const Item = document.querySelectorAll(".listProduct .item");
+initApp();
 
+const category = document.querySelectorAll(".category-container a");
+const Item = document.querySelectorAll(".listProduct");
+
+function newFunction() {
+  return "click";
+}
 category.forEach((a) => {
   a.onclick = function () {
     //active
@@ -205,37 +226,21 @@ category.forEach((a) => {
       a.className = "";
     });
     a.className = "active";
-    console.log("hello world");
     //Filter
+    // console.log("hello world");
+
     const value = a.id;
+    // console.log(value);
+    // console.log(Item);
+
     Item.forEach((div) => {
-      div.style.display = "none";
-      if (
-        div.getAttribute("data-filter") == value.toLowerCase() ||
-        value == "All Menu"
-      ) {
-        div.style.display = "flex";
-      }
+      div.forEach((d) => {
+        d.style.display = "none";
+        if (d.getAttribute("data-filter") == value.toLowerCase()) {
+          d.style.display = "flex";
+        }
+        console.log(d);
+      });
     });
   };
 });
-const initApp = () => {
-  // get data product
-  fetch("products.json")
-    .then((response) => response.json())
-    .then((data) => {
-      products = data;
-      addDataToHTML();
-      modalAddDataToHTML();
-
-      // get data cart from memory
-      if (localStorage.getItem("cart")) {
-        cart = JSON.parse(localStorage.getItem("cart"));
-        addCartToHTML();
-      }
-    });
-};
-initApp();
-function newFunction() {
-  return "click";
-}
